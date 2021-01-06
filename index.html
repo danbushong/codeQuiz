@@ -48,27 +48,27 @@
         function answer1() {
 
             document.querySelector("#rightOrWrong").innerHTML = "Right!";
-            //need to add score increase here
-            if (document.querySelector("#rightOrWrong").innerHTML === "Right!"){
-            document.querySelector("#score").innerHTML = "Score:" + 1;
-            
-            
-            
+            //add score increase here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
+                document.querySelector("#score").innerHTML = "Score:" + 1;
 
 
             }
-          
 
-        
-            
 
         }
+
         function answer2() {
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //need to add score decrease, as well as time decrease
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                document.querySelector("#score").innerHTML= "Score:" + -1;
+                //need to make the time decrease here
+            }
 
         }
+
         function answer3() {
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
@@ -82,7 +82,7 @@
             //need to add score decrease, as well as time decrease
 
         }
-        
+
 
 
 
