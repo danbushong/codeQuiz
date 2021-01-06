@@ -30,7 +30,7 @@
                 secondsLeft--;
                 countdown.textContent = secondsLeft + "seconds left";
 
-                // if (secondsLeft === 0 ){
+                //if (secondsLeft === 0 ){
                 //this is where ill put the ending sequence for the high score and the final score
                 // }
 
@@ -44,6 +44,7 @@
             document.querySelector("#ans4").innerHTML = "13";
 
         }
+
         //what will happen if answer 1 is clicked
         function answer1() {
 
@@ -62,9 +63,9 @@
         function answer2() {
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
-            //need to add score decrease, as well as time decrease
+            //time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
-                secondsLeft--;
+                secondsLeft -= 10;
                 console.log(secondsLeft);
                 //need to make the time decrease here
             }
@@ -74,12 +75,12 @@
         function answer3() {
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
-            //need to add score decrease, as well as time decrease
+            //time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
-                secondsLeft--;
+                secondsLeft -= 10;
                 console.log(secondsLeft);
                 
-                //time decrease here
+                //time decrease above here
             }
 
         }
@@ -87,12 +88,12 @@
         function answer4() {
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
-            //need to add score decrease, as well as time decrease
+            //time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
-                secondsLeft--;
+                secondsLeft -= 10;
                 console.log(secondsLeft);
                 
-                //time decrease here
+                //time decrease above here
             }
 
         }
