@@ -1,2 +1,11 @@
+.jumbotron{
+    margin: 10%;
+    text-align: center;
+}
 
 
+#countdown{
+    margin: 5%;
+    float: right;
+
+}

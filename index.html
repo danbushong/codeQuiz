@@ -5,17 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Time!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <button onclick="startClock()">Begin Quiz</button>
+
     <div id="countdown"></div>
-    <div id="question1">Ready for a Quiz?</div>
-    <button id="ans1" onclick="answer1()"></button>
-    <button id="ans2" onclick="answer2()"></button>
-    <button id="ans3" onclick="answer3()"></button>
-    <button id="ans4" onclick="answer4()"></button>
-    <div id="rightOrWrong"></div>
+    <br>
+
+    <div class="jumbotron">
+
+        <section id="firstQ">
+
+
+
+            <h1 id="question1">Ready for a Quiz?</h1>
+            <br>
+
+            <button id="ans1" onclick="answer1()"></button>
+            <button id="ans2" onclick="answer2()"></button>
+            <button id="ans3" onclick="answer3()"></button>
+            <button id="ans4" onclick="answer4()"></button>
+
+        </section>
+
+        <section id="secondQ">
+
+            <h1 id="question2"></h1>
+
+
+
+        </section>
+
+
+        <br>
+
+        <button id="beginQuiz" onclick="startClock()">Begin Quiz</button>
+        <br>
+
+        <div id="rightOrWrong"></div>
+
+    </div>
+
+    <br>
+
+
     <div id="score"></div>
 
     <script>
@@ -23,12 +72,18 @@
         var secondsLeft = 100;
         var countdown = document.querySelector("#countdown");
         var score = 0;
+        var question2 = document.querySelector("#question2");
+
+
+
 
 
         function startClock() {
             var timerInterval = setInterval(function () {
                 secondsLeft--;
-                countdown.textContent = secondsLeft + "seconds left";
+                countdown.textContent = secondsLeft + " seconds left";
+                //hides the button when pressed
+                document.querySelector("#beginQuiz").style.visibility = "hidden";
 
                 //if (secondsLeft === 0 ){
                 //this is where ill put the ending sequence for the high score and the final score
@@ -36,7 +91,7 @@
 
             }, 1000);
             //first question
-            document.querySelector("#question1").innerHTML = "how many in a dozen?";
+            document.querySelector("#question1").innerHTML = "How many in a dozen?";
             //first set of answers
             document.querySelector("#ans1").innerHTML = "12";
             document.querySelector("#ans2").innerHTML = "21";
@@ -48,6 +103,10 @@
         //what will happen if answer 1 is clicked
         function answer1() {
 
+            //this will erase the question and answers
+            document.querySelector("#firstQ").style.visibility = "hidden";
+
+
             document.querySelector("#rightOrWrong").innerHTML = "Right!";
             //add score increase here
             if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
@@ -55,12 +114,25 @@
                 console.log(score);
 
 
+
             }
+
+            if (document.querySelector("#firstQ").style.visibility = "hidden") {
+                var question2 = document.querySelector("#question2").innerHTML = "What is my lucky number?";
+
+
+
+
+            }
+
+
 
 
         }
 
         function answer2() {
+
+            document.querySelector("#firstQ").style.visibility = "hidden";
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease
@@ -70,30 +142,58 @@
                 //need to make the time decrease here
             }
 
+            if (document.querySelector("#firstQ").style.visibility = "hidden") {
+                var question2 = document.querySelector("#question2").innerHTML = "What is my lucky number?";
+
+
+
+
+            }
+
         }
 
         function answer3() {
+
+            document.querySelector("#firstQ").style.visibility = "hidden";
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
                 secondsLeft -= 10;
                 console.log(secondsLeft);
-                
+
                 //time decrease above here
+            }
+
+            if (document.querySelector("#firstQ").style.visibility = "hidden") {
+                var question2 = document.querySelector("#question2").innerHTML = "What is my lucky number?";
+
+
+
+
             }
 
         }
 
         function answer4() {
 
+            document.querySelector("#firstQ").style.visibility = "hidden";
+
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
                 secondsLeft -= 10;
                 console.log(secondsLeft);
-                
+
                 //time decrease above here
+            }
+
+            if (document.querySelector("#firstQ").style.visibility = "hidden") {
+                var question2 = document.querySelector("#question2").innerHTML = "What is my lucky number?";
+
+
+
+
             }
 
         }
