@@ -22,7 +22,7 @@
 
         var secondsLeft = 100;
         var countdown = document.querySelector("#countdown");
-        var score = 0
+        var score = document.querySelector("#score");
 
 
         function startClock() {
@@ -35,31 +35,54 @@
                 // }
 
             }, 1000);
-
+            //first question
             document.querySelector("#question1").innerHTML = "how many in a dozen?";
-
+            //first set of answers
             document.querySelector("#ans1").innerHTML = "12";
             document.querySelector("#ans2").innerHTML = "21";
             document.querySelector("#ans3").innerHTML = "11";
             document.querySelector("#ans4").innerHTML = "13";
 
-            
-
-            
-
-
-
-
-
         }
+        //what will happen if answer 1 is clicked
+        function answer1() {
 
-        function answer1(){
-                
             document.querySelector("#rightOrWrong").innerHTML = "Right!";
-                
-                
-                
+            //need to add score increase here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Right!"){
+            document.querySelector("#score").innerHTML = "Score:" + 1;
+            
+            
+            
+
+
+            }
+          
+
+        
+            
+
         }
+        function answer2() {
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //need to add score decrease, as well as time decrease
+
+        }
+        function answer3() {
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //need to add score decrease, as well as time decrease
+
+        }
+
+        function answer4() {
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //need to add score decrease, as well as time decrease
+
+        }
+        
 
 
 
