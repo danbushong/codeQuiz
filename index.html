@@ -22,7 +22,7 @@
 
         var secondsLeft = 100;
         var countdown = document.querySelector("#countdown");
-        var score = document.querySelector("#score");
+        var score = 0;
 
 
         function startClock() {
@@ -50,7 +50,8 @@
             document.querySelector("#rightOrWrong").innerHTML = "Right!";
             //add score increase here
             if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
-                document.querySelector("#score").innerHTML = "Score:" + 1;
+                score++;
+                console.log(score);
 
 
             }
@@ -63,7 +64,8 @@
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //need to add score decrease, as well as time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
-                document.querySelector("#score").innerHTML= "Score:" + -1;
+                secondsLeft--;
+                console.log(secondsLeft);
                 //need to make the time decrease here
             }
 
@@ -73,6 +75,12 @@
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //need to add score decrease, as well as time decrease
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft--;
+                console.log(secondsLeft);
+                
+                //time decrease here
+            }
 
         }
 
@@ -80,6 +88,12 @@
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //need to add score decrease, as well as time decrease
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft--;
+                console.log(secondsLeft);
+                
+                //time decrease here
+            }
 
         }
 
