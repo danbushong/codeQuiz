@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Time!</title>
+</head>
+
+<body>
+    <button onclick="startClock()">Begin Quiz</button>
+    <div id="countdown"></div>
+    <div id="question1">stuff</div>
+
+
+    <script>
+
+        var secondsLeft = 100;
+        var countdown = document.querySelector("#countdown");
+
+
+        function startClock() {
+            var timerInterval = setInterval(function () {
+                secondsLeft--;
+                countdown.textContent = secondsLeft + "seconds left";
+
+                // if (secondsLeft === 0 ){
+                //this is where ill put the ending sequence for the high score and the final score
+                // }
+
+            }, 1000);
+
+            document.querySelector("#question1").innerHTML = "how many in a dozen?"
+
+
+
+
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
