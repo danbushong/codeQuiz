@@ -100,6 +100,19 @@
 
         </section>
 
+        <section id="fifthQ">
+            <h1 id="question5"></h1>
+            <br>
+            <div id="question5Answers">
+                <button id="q5Ans1" onclick="answer1Q5()"></button>
+                <button id="q5Ans2" onclick="answer2Q5()"></button>
+                <button id="q5Ans3" onclick="answer3Q5()"></button>
+                <button id="q5Ans4" onclick="answer4Q5()"></button>
+
+
+            </div>
+        </section>
+
 
         <br>
 
@@ -129,6 +142,8 @@
 
         var question4 = document.querySelector("#question4");
 
+        var question5 = document.querySelector("#question5");
+
         
 
         
@@ -142,6 +157,8 @@
         var question3Answers = document.querySelector("#question3Answers").style.visibility = "hidden";
 
         var question4Answers = document.querySelector("#question4Answers").style.visibility = "hidden";
+
+        var question5Answers = document.querySelector("#question5Answers").style.visibility = "hidden";
 
 
 
@@ -572,7 +589,7 @@
 
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
-            //add score increase here
+            //time decrease here
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
                 secondsLeft -= 10;
                 console.log(secondsLeft);
@@ -598,17 +615,139 @@
 
 
         }
-
+        //what will happen if clicked
         function answer1Q4(){
+            //this will erase the question and answers
+            document.querySelector("#fourthQ").style.visibility = "hidden";
+
+            document.querySelector("#question4Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //time decrease here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+
+
+            }
+
+            if (document.querySelector("#fourthQ").style.visibility = "hidden") {
+                //new question is asked when the last one is hidden
+                var question5 = document.querySelector("#question5").innerHTML = "What is the best martial art?";
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q5Ans1").innerHTML = "Aikido";
+                document.querySelector("#q5Ans2").innerHTML = "Muay Thai";
+                document.querySelector("#q5Ans3").innerHTML = "Run Fast";
+                document.querySelector("#q5Ans4").innerHTML = "Jiu Jitsu";
+                
+                //this will make question 5s answer/buttons availible
+                var question5Answers = document.querySelector("#question5Answers").style.visibility = "visible";
+            }
+
+
 
         }
+       
         function answer2Q4(){
+            //this will erase the question and answers
+            document.querySelector("#fourthQ").style.visibility = "hidden";
+
+            document.querySelector("#question4Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //time decrease here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+
+
+            }
+
+            if (document.querySelector("#fourthQ").style.visibility = "hidden") {
+                //new question is asked when the last one is hidden
+                var question5 = document.querySelector("#question5").innerHTML = "What is the best martial art?";
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q5Ans1").innerHTML = "Aikido";
+                document.querySelector("#q5Ans2").innerHTML = "Muay Thai";
+                document.querySelector("#q5Ans3").innerHTML = "Run Fast";
+                document.querySelector("#q5Ans4").innerHTML = "Jiu Jitsu";
+                
+                //this will make question 5s answer/buttons availible
+                var question5Answers = document.querySelector("#question5Answers").style.visibility = "visible";
+            }
+
             
         }
         function answer3Q4(){
+            //this will erase the question and answers
+            document.querySelector("#fourthQ").style.visibility = "hidden";
+
+            document.querySelector("#question4Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Right!";
+            //score increase here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
+                score++;
+                console.log(score);
+
+
+
+            }
+
+            if (document.querySelector("#fourthQ").style.visibility = "hidden") {
+                //new question is asked when the last one is hidden
+                var question5 = document.querySelector("#question5").innerHTML = "What is the best martial art?";
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q5Ans1").innerHTML = "Aikido";
+                document.querySelector("#q5Ans2").innerHTML = "Muay Thai";
+                document.querySelector("#q5Ans3").innerHTML = "Run Fast";
+                document.querySelector("#q5Ans4").innerHTML = "Jiu Jitsu";
+                
+                //this will make question 5s answer/buttons availible
+                var question5Answers = document.querySelector("#question5Answers").style.visibility = "visible";
+            }
+
             
         }
         function answer4Q4(){
+            //this will erase the question and answers
+            document.querySelector("#fourthQ").style.visibility = "hidden";
+
+            document.querySelector("#question4Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //time decrease here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+
+
+            }
+
+            if (document.querySelector("#fourthQ").style.visibility = "hidden") {
+                //new question is asked when the last one is hidden
+                var question5 = document.querySelector("#question5").innerHTML = "What is the best martial art?";
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q5Ans1").innerHTML = "Aikido";
+                document.querySelector("#q5Ans2").innerHTML = "Muay Thai";
+                document.querySelector("#q5Ans3").innerHTML = "Run Fast";
+                document.querySelector("#q5Ans4").innerHTML = "Jiu Jitsu";
+                
+                //this will make question 5s answer/buttons availible
+                var question5Answers = document.querySelector("#question5Answers").style.visibility = "visible";
+            }
+
             
         }
 
