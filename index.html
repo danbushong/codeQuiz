@@ -172,6 +172,12 @@
                 countdown.textContent = secondsLeft + " seconds left";
                 //hides the button when pressed
                 document.querySelector("#beginQuiz").style.visibility = "hidden";
+
+                if(secondsLeft < 1){
+                    document.querySelector("#countdown").innerHTML = "Time is up!";
+
+                    
+                }
                 
 
                 //if (secondsLeft === 0 ){
@@ -749,6 +755,82 @@
             }
 
             
+        }
+        function answer1Q5(){
+            //this will erase the question and answers
+            document.querySelector("#fifthQ").style.visibility = "hidden";
+
+            document.querySelector("#question5Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //time decrease here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+
+
+            }
+
+
+        }
+        function answer2Q5(){
+            //this will erase the question and answers
+            document.querySelector("#fifthQ").style.visibility = "hidden";
+
+            document.querySelector("#question5Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //time decrease here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+
+
+            }
+
+
+        }
+        function answer3Q5(){
+            //this will erase the question and answers
+            document.querySelector("#fifthQ").style.visibility = "hidden";
+
+            document.querySelector("#question5Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //time decrease here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+
+
+            }
+
+
+        }
+        function answer4Q5(){
+            //this will erase the question and answers
+            document.querySelector("#fifthQ").style.visibility = "hidden";
+
+            document.querySelector("#question5Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Right!";
+            //time decrease here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
+                score++;
+                console.log(score);
+
+
+
+            }
+
+
         }
 
 
