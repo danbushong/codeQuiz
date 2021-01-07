@@ -28,7 +28,7 @@
     <div id="countdown"></div>
     <br>
 
-    <div class="jumbotron">
+    <div class="background">
 
         <section id="firstQ">
 
@@ -36,11 +36,15 @@
 
             <h1 id="question1">Ready for a Quiz?</h1>
             <br>
+            <div id="question1Answers">
 
             <button id="ans1" onclick="answer1()"></button>
             <button id="ans2" onclick="answer2()"></button>
             <button id="ans3" onclick="answer3()"></button>
             <button id="ans4" onclick="answer4()"></button>
+
+            </div>
+            
 
         </section>
 
@@ -125,7 +129,7 @@
 
         
 
-        //keeps the buttons for the 2nd questions answers hidden until needed
+        //keeps the buttons for the 2nd questions answers hidden until needed(might not need this)
         var question2Answers = document.querySelector("#question2Answers").style.visibility = "hidden";
 
         var question3Answers = document.querySelector("#question3Answers").style.visibility = "hidden";
@@ -448,6 +452,8 @@
             //this will erase the question and answers
             document.querySelector("#thirdQ").style.visibility = "hidden";
 
+            document.querySelector("#question3Answers").style.visibility = "hidden";
+
 
             document.querySelector("#rightOrWrong").innerHTML = "Right!";
             //add score increase here
@@ -468,14 +474,132 @@
                 document.querySelector("#q4Ans2").innerHTML = "ask dave";
                 document.querySelector("#q4Ans3").innerHTML = "only bad";
                 document.querySelector("#q4Ans4").innerHTML = "only good";
+                
+                //this will make question 4s answer/buttons availible
+                var question4Answers = document.querySelector("#question4Answers").style.visibility = "visible";
+            }
 
-                var question4Answers = document.querySelector("#question2Answers").style.visibility = "visible";
+
+
+        }
+        //what will happen if i click on the second answer on question 3
+        function answer2Q3(){
+            //this will erase the question and answers
+            document.querySelector("#thirdQ").style.visibility = "hidden";
+
+            document.querySelector("#question3Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //add score increase here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+
+
+            }
+
+            if (document.querySelector("#thirdQ").style.visibility = "hidden") {
+                //new question is asked when the last one is hidden
+                var question4 = document.querySelector("#question4").innerHTML = "What happens when keeping it real goes wrong?";
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q4Ans1").innerHTML = "no one knows";
+                document.querySelector("#q4Ans2").innerHTML = "ask dave";
+                document.querySelector("#q4Ans3").innerHTML = "only bad";
+                document.querySelector("#q4Ans4").innerHTML = "only good";
+                
+                //this will make question 4s answer/buttons availible
+                var question4Answers = document.querySelector("#question4Answers").style.visibility = "visible";
+            }
+
+
+
+        }
+        //what will happen if I click the third answer on question 3
+        function answer3Q3(){
+            //this will erase the question and answers
+            document.querySelector("#thirdQ").style.visibility = "hidden";
+
+            document.querySelector("#question3Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //add score increase here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+
+
+            }
+
+            if (document.querySelector("#thirdQ").style.visibility = "hidden") {
+                //new question is asked when the last one is hidden
+                var question4 = document.querySelector("#question4").innerHTML = "What happens when keeping it real goes wrong?";
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q4Ans1").innerHTML = "no one knows";
+                document.querySelector("#q4Ans2").innerHTML = "ask dave";
+                document.querySelector("#q4Ans3").innerHTML = "only bad";
+                document.querySelector("#q4Ans4").innerHTML = "only good";
+                
+                //this will make question 4s answer/buttons availible
+                var question4Answers = document.querySelector("#question4Answers").style.visibility = "visible";
+            }
+
+
+
+        }
+        //what will happen if I click the fourth answer on question 3
+        function answer4Q3(){
+            //this will erase the question and answers
+            document.querySelector("#thirdQ").style.visibility = "hidden";
+
+            document.querySelector("#question3Answers").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //add score increase here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+
+
+            }
+
+            if (document.querySelector("#thirdQ").style.visibility = "hidden") {
+                //new question is asked when the last one is hidden
+                var question4 = document.querySelector("#question4").innerHTML = "What happens when keeping it real goes wrong?";
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q4Ans1").innerHTML = "no one knows";
+                document.querySelector("#q4Ans2").innerHTML = "ask dave";
+                document.querySelector("#q4Ans3").innerHTML = "only bad";
+                document.querySelector("#q4Ans4").innerHTML = "only good";
+                
+                //this will make question 4s answer/buttons availible
+                var question4Answers = document.querySelector("#question4Answers").style.visibility = "visible";
             }
 
 
 
         }
 
+        function answer1Q4(){
+
+        }
+        function answer2Q4(){
+            
+        }
+        function answer3Q4(){
+            
+        }
+        function answer4Q4(){
+            
+        }
 
 
 
