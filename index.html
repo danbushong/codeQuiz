@@ -49,6 +49,18 @@
             <h1 id="question2"></h1>
 
 
+            <div id="question2Answers">
+
+                <button id="q2Ans1" onclick="answer1q2()"></button>
+                <button id="q2Ans2" onclick="answer1q2()"></button>
+                <button id="q2Ans3" onclick="answer1q2()"></button>
+                <button id="q2Ans4" onclick="answer1q2()"></button>
+
+
+            </div>
+
+
+
 
         </section>
 
@@ -73,6 +85,12 @@
         var countdown = document.querySelector("#countdown");
         var score = 0;
         var question2 = document.querySelector("#question2");
+
+        // var q2Ans1 = document.querySelector("#q2Ans1");
+
+        //keeps the buttons for the 2nd questions answers hidden until needed
+        var question2Answers = document.querySelector("#question2Answers").style.visibility = "hidden";
+
 
 
 
@@ -100,6 +118,8 @@
 
         }
 
+
+
         //what will happen if answer 1 is clicked
         function answer1() {
 
@@ -118,12 +138,23 @@
             }
 
             if (document.querySelector("#firstQ").style.visibility = "hidden") {
+                //new question is asked when the last one is hidden
                 var question2 = document.querySelector("#question2").innerHTML = "What is my lucky number?";
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q2Ans1").innerHTML = "38";
+                document.querySelector("#q2Ans2").innerHTML = "42";
+                document.querySelector("#q2Ans3").innerHTML = "11";
+                document.querySelector("#q2Ans4").innerHTML = "7";
+
+                var question2Answers = document.querySelector("#question2Answers").style.visibility = "visible";
+
 
 
 
 
             }
+
 
 
 
@@ -144,6 +175,17 @@
 
             if (document.querySelector("#firstQ").style.visibility = "hidden") {
                 var question2 = document.querySelector("#question2").innerHTML = "What is my lucky number?";
+
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q2Ans1").innerHTML = "38";
+                document.querySelector("#q2Ans2").innerHTML = "42";
+                document.querySelector("#q2Ans3").innerHTML = "11";
+                document.querySelector("#q2Ans4").innerHTML = "7";
+
+                var question2Answers = document.querySelector("#question2Answers").style.visibility = "visible";
+
+                
 
 
 
@@ -168,6 +210,16 @@
             if (document.querySelector("#firstQ").style.visibility = "hidden") {
                 var question2 = document.querySelector("#question2").innerHTML = "What is my lucky number?";
 
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q2Ans1").innerHTML = "38";
+                document.querySelector("#q2Ans2").innerHTML = "42";
+                document.querySelector("#q2Ans3").innerHTML = "11";
+                document.querySelector("#q2Ans4").innerHTML = "7";
+
+                var question2Answers = document.querySelector("#question2Answers").style.visibility = "visible";
+
+
 
 
 
@@ -190,6 +242,16 @@
 
             if (document.querySelector("#firstQ").style.visibility = "hidden") {
                 var question2 = document.querySelector("#question2").innerHTML = "What is my lucky number?";
+
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q2Ans1").innerHTML = "38";
+                document.querySelector("#q2Ans2").innerHTML = "42";
+                document.querySelector("#q2Ans3").innerHTML = "11";
+                document.querySelector("#q2Ans4").innerHTML = "7";
+
+                var question2Answers = document.querySelector("#question2Answers").style.visibility = "visible";
+
 
 
 
