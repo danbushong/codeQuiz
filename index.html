@@ -47,20 +47,51 @@
         <section id="secondQ">
 
             <h1 id="question2"></h1>
+            <br>
 
 
             <div id="question2Answers">
 
-                <button id="q2Ans1" onclick="answer1q2()"></button>
-                <button id="q2Ans2" onclick="answer1q2()"></button>
-                <button id="q2Ans3" onclick="answer1q2()"></button>
-                <button id="q2Ans4" onclick="answer1q2()"></button>
+                <button id="q2Ans1" onclick="answer1Q2()"></button>
+                <button id="q2Ans2" onclick="answer2Q2()"></button>
+                <button id="q2Ans3" onclick="answer3Q2()"></button>
+                <button id="q2Ans4" onclick="answer4Q2()"></button>
+
+            </div>
+
+        </section>
+
+        <section id="thirdQ">
+
+            <h1 id="question3"></h1>
+            <br>
+
+            <div id="question3Answers">
+
+                <button id="q3Ans1" onclick="answer1Q3()"></button>
+                <button id="q3Ans2" onclick="answer2Q3()"></button>
+                <button id="q3Ans3" onclick="answer3Q3()"></button>
+                <button id="q3Ans4" onclick="answer4Q3()"></button>
 
 
             </div>
 
+        </section>
+
+        <section id="fourthQ">
+
+            <h1 id="question4"></h1>
+            <br>
+
+            <div id="question4Answers">
+
+                <button id="q4Ans1" onclick="answer1Q4()"></button>
+                <button id="q4Ans2" onclick="answer2Q4()"></button>
+                <button id="q4Ans3" onclick="answer3Q4()"></button>
+                <button id="q4Ans4" onclick="answer4Q4()"></button>
 
 
+            </div>
 
         </section>
 
@@ -86,10 +117,21 @@
         var score = 0;
         var question2 = document.querySelector("#question2");
 
-        // var q2Ans1 = document.querySelector("#q2Ans1");
+        var question3 = document.querySelector("#question3");
+
+        var question4 = document.querySelector("#question4");
+
+        
+
+        
 
         //keeps the buttons for the 2nd questions answers hidden until needed
         var question2Answers = document.querySelector("#question2Answers").style.visibility = "hidden";
+
+        var question3Answers = document.querySelector("#question3Answers").style.visibility = "hidden";
+
+        var question4Answers = document.querySelector("#question4Answers").style.visibility = "hidden";
+
 
 
 
@@ -156,9 +198,6 @@
             }
 
 
-
-
-
         }
 
         function answer2() {
@@ -186,10 +225,6 @@
                 var question2Answers = document.querySelector("#question2Answers").style.visibility = "visible";
 
                 
-
-
-
-
             }
 
         }
@@ -260,7 +295,186 @@
 
         }
 
+        function answer1Q2(){
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //time decrease
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
 
+                //time decrease above here
+            }
+            //hides question once clicked
+            document.querySelector("#secondQ").style.visibility = "hidden";
+            //hides once clicked
+            document.querySelector("#question2Answers").style.visibility = "hidden";
+
+            if (document.querySelector("#secondQ").style.visibility = "hidden") {
+
+                var question3 = document.querySelector("#question3").innerHTML = "What is the best TV show?";
+
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q3Ans1").innerHTML = "South Park";
+                document.querySelector("#q3Ans2").innerHTML = "Futurama";
+                document.querySelector("#q3Ans3").innerHTML = "Family Guy";
+                document.querySelector("#q3Ans4").innerHTML = "Death Note";
+
+                var question3Answers = document.querySelector("#question3Answers").style.visibility = "visible";
+
+
+
+
+
+            }
+
+
+
+        }
+
+        function answer2Q2(){
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //time decrease
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+                //time decrease above here
+            }
+            //hides once clicked
+            document.querySelector("#secondQ").style.visibility = "hidden";
+            //hides once clicked
+            document.querySelector("#question2Answers").style.visibility = "hidden";
+
+            if (document.querySelector("#secondQ").style.visibility = "hidden") {
+                var question3 = document.querySelector("#question3").innerHTML = "What is the best TV show?";
+
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q3Ans1").innerHTML = "South Park";
+                document.querySelector("#q3Ans2").innerHTML = "Futurama";
+                document.querySelector("#q3Ans3").innerHTML = "Family Guy";
+                document.querySelector("#q3Ans4").innerHTML = "Death Note";
+
+                var question3Answers = document.querySelector("#question3Answers").style.visibility = "visible";
+
+
+
+
+
+            }
+
+        }
+
+        function answer3Q2(){
+            document.querySelector("#rightOrWrong").innerHTML = "Right!";
+
+            if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
+                score++;
+                console.log(score);
+
+
+
+            }
+            //hides once clicked
+            document.querySelector("#secondQ").style.visibility = "hidden";
+            //hides once clicked
+            document.querySelector("#question2Answers").style.visibility = "hidden";
+
+            if (document.querySelector("#secondQ").style.visibility = "hidden") {
+                var question3 = document.querySelector("#question3").innerHTML = "What is the best TV show?";
+
+                
+
+            }
+            if (document.querySelector("#secondQ").style.visibility = "hidden"){
+
+
+                // var question3Answers = document.querySelector("#question3Answers").style.visibility = "visible";
+
+                //new answers are displayed when the last question is hidden
+                
+                document.querySelector("#q3Ans1").innerHTML = "South Park";
+                document.querySelector("#q3Ans2").innerHTML = "Futurama";
+                document.querySelector("#q3Ans3").innerHTML = "Family Guy";
+                document.querySelector("#q3Ans4").innerHTML = "Death Note";
+
+                
+
+                var question3Answers = document.querySelector("#question3Answers").style.visibility = "visible";
+
+
+
+
+            }
+
+            
+        }
+        function answer4Q2(){
+            document.querySelector("#rightOrWrong").innerHTML = "Wrong";
+            //time decrease
+            if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
+                secondsLeft -= 10;
+                console.log(secondsLeft);
+
+                //time decrease above here
+            }
+            //hides once clicked
+            document.querySelector("#secondQ").style.visibility = "hidden";
+            //hides once clicked
+            document.querySelector("#question2Answers").style.visibility = "hidden";
+
+            if (document.querySelector("#secondQ").style.visibility = "hidden") {
+                var question3 = document.querySelector("#question3").innerHTML = "What is the best TV show?";
+
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q3Ans1").innerHTML = "South Park";
+                document.querySelector("#q3Ans2").innerHTML = "Futurama";
+                document.querySelector("#q3Ans3").innerHTML = "Family Guy";
+                document.querySelector("#q3Ans4").innerHTML = "Death Note";
+
+                var question3Answers = document.querySelector("#question3Answers").style.visibility = "visible";
+
+
+
+
+
+            }
+
+        }
+        //what will happen if i click on the first answer on question 3
+        function answer1Q3(){
+            //this will erase the question and answers
+            document.querySelector("#thirdQ").style.visibility = "hidden";
+
+
+            document.querySelector("#rightOrWrong").innerHTML = "Right!";
+            //add score increase here
+            if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
+                score++;
+                console.log(score);
+
+
+
+            }
+
+            if (document.querySelector("#thirdQ").style.visibility = "hidden") {
+                //new question is asked when the last one is hidden
+                var question4 = document.querySelector("#question4").innerHTML = "What happens when keeping it real goes wrong?";
+                //new answers are displayed when the last question is hidden
+
+                document.querySelector("#q4Ans1").innerHTML = "no one knows";
+                document.querySelector("#q4Ans2").innerHTML = "ask dave";
+                document.querySelector("#q4Ans3").innerHTML = "only bad";
+                document.querySelector("#q4Ans4").innerHTML = "only good";
+
+                var question4Answers = document.querySelector("#question2Answers").style.visibility = "visible";
+            }
+
+
+
+        }
 
 
 
