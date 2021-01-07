@@ -36,6 +36,7 @@
 
             <h1 id="question1">Ready for a Quiz?</h1>
             <br>
+
             <div id="question1Answers">
 
             <button id="ans1" onclick="answer1()"></button>
@@ -119,6 +120,9 @@
         var secondsLeft = 100;
         var countdown = document.querySelector("#countdown");
         var score = 0;
+
+        
+
         var question2 = document.querySelector("#question2");
 
         var question3 = document.querySelector("#question3");
@@ -130,6 +134,9 @@
         
 
         //keeps the buttons for the 2nd questions answers hidden until needed(might not need this)
+        
+        var question1Answers = document.querySelector("#question1Answers").style.visibility = "hidden";
+
         var question2Answers = document.querySelector("#question2Answers").style.visibility = "hidden";
 
         var question3Answers = document.querySelector("#question3Answers").style.visibility = "hidden";
@@ -148,6 +155,7 @@
                 countdown.textContent = secondsLeft + " seconds left";
                 //hides the button when pressed
                 document.querySelector("#beginQuiz").style.visibility = "hidden";
+                
 
                 //if (secondsLeft === 0 ){
                 //this is where ill put the ending sequence for the high score and the final score
@@ -155,6 +163,7 @@
 
             }, 1000);
             //first question
+            document.querySelector("#question1Answers").style.visibility = "visible";
             document.querySelector("#question1").innerHTML = "How many in a dozen?";
             //first set of answers
             document.querySelector("#ans1").innerHTML = "12";
@@ -171,6 +180,8 @@
 
             //this will erase the question and answers
             document.querySelector("#firstQ").style.visibility = "hidden";
+            document.querySelector("#question1Answers").style.visibility = "hidden";
+            
 
 
             document.querySelector("#rightOrWrong").innerHTML = "Right!";
