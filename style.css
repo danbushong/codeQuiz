@@ -74,10 +74,15 @@ h1{
 
 }
 form{
-    float: left;
-    margin: 5%
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    right: 20%;
+    text-align: center;
+    z-index: 2;
 }
-#highscore{
+
+#initialsList{
     position: absolute;
     top: 35%;
     left: 20%;

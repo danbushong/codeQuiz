@@ -30,10 +30,7 @@
 
     <span id="score"></span>
     <br>
-    <div id="highscores-form">
-
-        
-        Highscores</div>
+    
     <br>
     <form id="submitInitials">
         <label for="initials">Initials</label><br>
@@ -41,7 +38,7 @@
         <br>
         <input type="submit" value="Submit">
     </form>
-    <ol id="initialsList"></ol>
+    <ol id="initialsList">Highscores</ol>
 
 
 
@@ -262,19 +259,7 @@
                     document.querySelector("#question4").style.visibility = "hidden";
                     document.querySelector("#question5").style.visibility = "hidden";
 
-                    if (document.querySelector("#countdown").innerHTML = "Time is up!") {
-                        if (typeof (Storage) !== "undefined") {
-                            // Store
-                            localStorage.setItem("initials", "");
-                            // Retrieve
-                            document.getElementById("highscores").innerHTML = localStorage.getItem("initials");
-                        }
-                        else {
-                            document.getElementById("highscores").innerHTML = "Sorry, your browser does not support Web Storage...";
-                        }
-
-                    }
-
+                    
 
 
 
