@@ -33,12 +33,12 @@
     
     <br>
     <form id="submitInitials">
-        <label for="initials">Initials</label><br>
+        <label for="initials">Congrats, High Score Write Your Initials!</label><br>
         <input type="text" id="initials" name="initials" value=""><br>
         <br>
         <input type="submit" value="Submit">
     </form>
-    <ul id="initialsList">Highscores</ul>
+    <ul id="initialsList">High Scores</ul>
 
 
 
@@ -281,11 +281,9 @@
 
 
 
-                //if (secondsLeft === 0 ){
-                //this is where ill put the ending sequence for the high score and the final score
-                // }
+                
 
-            }, 500);
+            }, 1000);
             //first question
             document.querySelector("#question1Answers").style.visibility = "visible";
             document.querySelector("#question1").innerHTML = "How many in a dozen?";
@@ -869,6 +867,8 @@
 
             document.querySelector("#question5Answers").style.visibility = "hidden";
 
+            document.querySelector("#countdown").style.visibility = "hidden";
+
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease here
@@ -893,6 +893,8 @@
 
             document.querySelector("#question5Answers").style.visibility = "hidden";
 
+            document.querySelector("#countdown").style.visibility = "hidden";
+
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease here
@@ -915,6 +917,8 @@
             document.querySelector("#fifthQ").style.visibility = "hidden";
 
             document.querySelector("#question5Answers").style.visibility = "hidden";
+
+            document.querySelector("#countdown").style.visibility = "hidden";
 
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
@@ -939,6 +943,8 @@
 
             document.querySelector("#question5Answers").style.visibility = "hidden";
 
+            document.querySelector("#countdown").style.visibility = "hidden";
+
 
 
 
@@ -957,6 +963,7 @@
 
 
             }
+            
 
 
         }
