@@ -30,8 +30,17 @@
 
     <span id="score"></span>
     <br>
-    <div id="result"></div>
+    <div id="highscores">Highscores</div>
     <br>
+    <form id="submitInitials">
+        <label for="initials">Initials</label><br>
+        <input type="text" id="initials" name="initials" value=""><br>
+        <br>
+        <input type="submit" value="Submit">
+    </form> 
+    <ol id="initialsList"></ol>
+
+    
 
 
 
@@ -151,10 +160,37 @@
 
 
         //stuff for the local storage highscores
+        var submitInitials = document.querySelector("#submitInitials");
+        var initials = document.querySelector("#initials");
+        var initialsList= document.querySelector("#initialsList")
 
+        submitInitials.addEventListener('submit', function (event) {
 
+            // Don't submit the form
+            event.preventDefault();
 
-        //this is the input
+            // Ignore it if the wishlist item is empty
+            if (initials.value.length < 1) return;
+
+            // Add item to wishlist
+            initialsList.innerHTML += '<li>' + initials.value + '</li>';
+
+            // Clear input
+            initials.value = '';
+
+            // Save the list to localStorage
+            localStorage.setItem('initials', initialsList.innerHTML);
+
+            }, false);
+
+            // Check for saved wishlist items
+            var saved = localStorage.getItem('initials');
+
+            // If there are any saved items, update our list
+            if (saved) {
+            initialsList.innerHTML = saved;
+            }
+        
 
 
 
@@ -199,14 +235,7 @@
 
         function startClock() {
 
-            if (typeof (Storage) !== "undefined") {
-                // Store
-                localStorage.setItem("lastname", "Smith");
-                // Retrieve
-                document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-            } else {
-                document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-            }
+
             var timerInterval = setInterval(function () {
                 secondsLeft--;
                 countdown.textContent = secondsLeft + " seconds left";
@@ -228,6 +257,19 @@
                     document.querySelector("#question4").style.visibility = "hidden";
                     document.querySelector("#question5").style.visibility = "hidden";
 
+                    if (document.querySelector("#countdown").innerHTML = "Time is up!") {
+                    if (typeof (Storage) !== "undefined") {
+                        // Store
+                        localStorage.setItem("initials", "");
+                        // Retrieve
+                        document.getElementById("highscores").innerHTML = localStorage.getItem("initials");
+                    }
+                    else {
+                        document.getElementById("highscores").innerHTML = "Sorry, your browser does not support Web Storage...";
+                    }
+
+                }
+
 
 
 
@@ -244,6 +286,7 @@
 
 
                 }
+                
 
 
                 //if (secondsLeft === 0 ){
@@ -308,6 +351,8 @@
 
             document.querySelector("#firstQ").style.visibility = "hidden";
 
+            document.querySelector("#question1Answers").style.visibility = "hidden";
+
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
@@ -336,6 +381,8 @@
         function answer3() {
 
             document.querySelector("#firstQ").style.visibility = "hidden";
+
+            document.querySelector("#question1Answers").style.visibility = "hidden";
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease
@@ -369,6 +416,8 @@
         function answer4() {
 
             document.querySelector("#firstQ").style.visibility = "hidden";
+
+            document.querySelector("#question1Answers").style.visibility = "hidden";
 
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease
@@ -837,10 +886,20 @@
                 document.querySelector("#score").innerHTML = "Your score was:" + score;
 
                 document.querySelector("#countdown").innerHTML = "Game Over";
+                if (typeof (Storage) !== "undefined") {
+                    // Store
+                    localStorage.setItem("initials", "DTB");
+                    // Retrieve
+                    document.getElementById("highscores").innerHTML = localStorage.getItem("initials");
+                }
+                else {
+                    document.getElementById("highscores").innerHTML = "Sorry, your browser does not support Web Storage...";
+                }
 
 
 
             }
+
 
 
         }
@@ -859,6 +918,15 @@
                 document.querySelector("#score").innerHTML = "Your score was:" + score;
 
                 document.querySelector("#countdown").innerHTML = "Game Over";
+                if (typeof (Storage) !== "undefined") {
+                    // Store
+                    localStorage.setItem("initials", "DTB");
+                    // Retrieve
+                    document.getElementById("highscores").innerHTML = localStorage.getItem("initials");
+                }
+                else {
+                    document.getElementById("highscores").innerHTML = "Sorry, your browser does not support Web Storage...";
+                }
 
 
 
@@ -881,6 +949,15 @@
                 document.querySelector("#score").innerHTML = "Your score was:" + score;
 
                 document.querySelector("#countdown").innerHTML = "Game Over";
+                if (typeof (Storage) !== "undefined") {
+                    // Store
+                    localStorage.setItem("initials", "DTB");
+                    // Retrieve
+                    document.getElementById("highscores").innerHTML = localStorage.getItem("initials");
+                }
+                else {
+                    document.getElementById("highscores").innerHTML = "Sorry, your browser does not support Web Storage...";
+                }
 
 
 
@@ -904,6 +981,15 @@
                 console.log(score);
 
                 document.querySelector("#score").innerHTML = "Your score was:" + score;
+                if (typeof (Storage) !== "undefined") {
+                    // Store
+                    localStorage.setItem("initials", "DTB");
+                    // Retrieve
+                    document.getElementById("highscores").innerHTML = localStorage.getItem("initials");
+                }
+                else {
+                    document.getElementById("highscores").innerHTML = "Sorry, your browser does not support Web Storage...";
+                }
 
 
 

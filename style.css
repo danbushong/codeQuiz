@@ -73,9 +73,9 @@ h1{
     float: right;
 
 }
-#score{
-    margin: 5%;
-    float: right;
+form{
+    float: left;
+    margin: 5%
 }
 #highscore{
     position: absolute;
