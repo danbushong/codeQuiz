@@ -73,3 +73,14 @@ h1{
     float: right;
 
 }
+#score{
+    margin: 5%;
+    float: right;
+}
+#highscore{
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    right: 20%;
+
+}

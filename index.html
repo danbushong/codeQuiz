@@ -28,6 +28,16 @@
     <div id="countdown"></div>
     <br>
 
+    <span id="score"></span>
+    <br>
+    <div id="result"></div>
+    <br>
+
+
+
+
+
+
     <div class="background">
 
         <section id="firstQ">
@@ -39,13 +49,13 @@
 
             <div id="question1Answers">
 
-            <button id="ans1" onclick="answer1()"></button>
-            <button id="ans2" onclick="answer2()"></button>
-            <button id="ans3" onclick="answer3()"></button>
-            <button id="ans4" onclick="answer4()"></button>
+                <button id="ans1" onclick="answer1()"></button>
+                <button id="ans2" onclick="answer2()"></button>
+                <button id="ans3" onclick="answer3()"></button>
+                <button id="ans4" onclick="answer4()"></button>
 
             </div>
-            
+
 
         </section>
 
@@ -126,15 +136,35 @@
     <br>
 
 
-    <div id="score"></div>
+    <span id="score"></span>
 
     <script>
 
-        var secondsLeft = 100;
+        var secondsLeft = 50;
         var countdown = document.querySelector("#countdown");
         var score = 0;
 
-        
+
+
+
+
+
+
+        //stuff for the local storage highscores
+
+
+
+        //this is the input
+
+
+
+
+
+
+
+
+
+
 
         var question2 = document.querySelector("#question2");
 
@@ -144,12 +174,8 @@
 
         var question5 = document.querySelector("#question5");
 
-        
-
-        
-
         //keeps the buttons for the 2nd questions answers hidden until needed(might not need this)
-        
+
         var question1Answers = document.querySelector("#question1Answers").style.visibility = "hidden";
 
         var question2Answers = document.querySelector("#question2Answers").style.visibility = "hidden";
@@ -166,25 +192,65 @@
 
 
 
+
+
+
+
+
         function startClock() {
+
+            if (typeof (Storage) !== "undefined") {
+                // Store
+                localStorage.setItem("lastname", "Smith");
+                // Retrieve
+                document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+            }
             var timerInterval = setInterval(function () {
                 secondsLeft--;
                 countdown.textContent = secondsLeft + " seconds left";
                 //hides the button when pressed
                 document.querySelector("#beginQuiz").style.visibility = "hidden";
 
-                if(secondsLeft < 1){
+                if (secondsLeft < 1) {
+                    //hide everything if time runs out
                     document.querySelector("#countdown").innerHTML = "Time is up!";
+                    document.querySelector("#rightOrWrong").style.visibility = "hidden";
+                    document.querySelector("#question1Answers").style.visibility = "hidden";
+                    document.querySelector("#question2Answers").style.visibility = "hidden";
+                    document.querySelector("#question3Answers").style.visibility = "hidden";
+                    document.querySelector("#question4Answers").style.visibility = "hidden";
+                    document.querySelector("#question5Answers").style.visibility = "hidden";
+                    document.querySelector("#question1").style.visibility = "hidden";
+                    document.querySelector("#question2").style.visibility = "hidden";
+                    document.querySelector("#question3").style.visibility = "hidden";
+                    document.querySelector("#question4").style.visibility = "hidden";
+                    document.querySelector("#question5").style.visibility = "hidden";
 
-                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 }
-                
+
 
                 //if (secondsLeft === 0 ){
                 //this is where ill put the ending sequence for the high score and the final score
                 // }
 
-            }, 1000);
+            }, 500);
             //first question
             document.querySelector("#question1Answers").style.visibility = "visible";
             document.querySelector("#question1").innerHTML = "How many in a dozen?";
@@ -204,7 +270,7 @@
             //this will erase the question and answers
             document.querySelector("#firstQ").style.visibility = "hidden";
             document.querySelector("#question1Answers").style.visibility = "hidden";
-            
+
 
 
             document.querySelector("#rightOrWrong").innerHTML = "Right!";
@@ -262,7 +328,7 @@
 
                 var question2Answers = document.querySelector("#question2Answers").style.visibility = "visible";
 
-                
+
             }
 
         }
@@ -333,7 +399,7 @@
 
         }
 
-        function answer1Q2(){
+        function answer1Q2() {
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
@@ -370,7 +436,7 @@
 
         }
 
-        function answer2Q2(){
+        function answer2Q2() {
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
@@ -404,7 +470,7 @@
 
         }
 
-        function answer3Q2(){
+        function answer3Q2() {
             document.querySelector("#rightOrWrong").innerHTML = "Right!";
 
             if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
@@ -422,22 +488,22 @@
             if (document.querySelector("#secondQ").style.visibility = "hidden") {
                 var question3 = document.querySelector("#question3").innerHTML = "What is the best TV show?";
 
-                
+
 
             }
-            if (document.querySelector("#secondQ").style.visibility = "hidden"){
+            if (document.querySelector("#secondQ").style.visibility = "hidden") {
 
 
                 // var question3Answers = document.querySelector("#question3Answers").style.visibility = "visible";
 
                 //new answers are displayed when the last question is hidden
-                
+
                 document.querySelector("#q3Ans1").innerHTML = "South Park";
                 document.querySelector("#q3Ans2").innerHTML = "Futurama";
                 document.querySelector("#q3Ans3").innerHTML = "Family Guy";
                 document.querySelector("#q3Ans4").innerHTML = "Death Note";
 
-                
+
 
                 var question3Answers = document.querySelector("#question3Answers").style.visibility = "visible";
 
@@ -446,9 +512,9 @@
 
             }
 
-            
+
         }
-        function answer4Q2(){
+        function answer4Q2() {
             document.querySelector("#rightOrWrong").innerHTML = "Wrong";
             //time decrease
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
@@ -482,7 +548,7 @@
 
         }
         //what will happen if i click on the first answer on question 3
-        function answer1Q3(){
+        function answer1Q3() {
             //this will erase the question and answers
             document.querySelector("#thirdQ").style.visibility = "hidden";
 
@@ -508,7 +574,7 @@
                 document.querySelector("#q4Ans2").innerHTML = "ask dave";
                 document.querySelector("#q4Ans3").innerHTML = "only bad";
                 document.querySelector("#q4Ans4").innerHTML = "only good";
-                
+
                 //this will make question 4s answer/buttons availible
                 var question4Answers = document.querySelector("#question4Answers").style.visibility = "visible";
             }
@@ -517,7 +583,7 @@
 
         }
         //what will happen if i click on the second answer on question 3
-        function answer2Q3(){
+        function answer2Q3() {
             //this will erase the question and answers
             document.querySelector("#thirdQ").style.visibility = "hidden";
 
@@ -543,7 +609,7 @@
                 document.querySelector("#q4Ans2").innerHTML = "ask dave";
                 document.querySelector("#q4Ans3").innerHTML = "only bad";
                 document.querySelector("#q4Ans4").innerHTML = "only good";
-                
+
                 //this will make question 4s answer/buttons availible
                 var question4Answers = document.querySelector("#question4Answers").style.visibility = "visible";
             }
@@ -552,7 +618,7 @@
 
         }
         //what will happen if I click the third answer on question 3
-        function answer3Q3(){
+        function answer3Q3() {
             //this will erase the question and answers
             document.querySelector("#thirdQ").style.visibility = "hidden";
 
@@ -578,7 +644,7 @@
                 document.querySelector("#q4Ans2").innerHTML = "ask dave";
                 document.querySelector("#q4Ans3").innerHTML = "only bad";
                 document.querySelector("#q4Ans4").innerHTML = "only good";
-                
+
                 //this will make question 4s answer/buttons availible
                 var question4Answers = document.querySelector("#question4Answers").style.visibility = "visible";
             }
@@ -587,7 +653,7 @@
 
         }
         //what will happen if I click the fourth answer on question 3
-        function answer4Q3(){
+        function answer4Q3() {
             //this will erase the question and answers
             document.querySelector("#thirdQ").style.visibility = "hidden";
 
@@ -613,7 +679,7 @@
                 document.querySelector("#q4Ans2").innerHTML = "ask dave";
                 document.querySelector("#q4Ans3").innerHTML = "only bad";
                 document.querySelector("#q4Ans4").innerHTML = "only good";
-                
+
                 //this will make question 4s answer/buttons availible
                 var question4Answers = document.querySelector("#question4Answers").style.visibility = "visible";
             }
@@ -622,7 +688,7 @@
 
         }
         //what will happen if clicked
-        function answer1Q4(){
+        function answer1Q4() {
             //this will erase the question and answers
             document.querySelector("#fourthQ").style.visibility = "hidden";
 
@@ -648,7 +714,7 @@
                 document.querySelector("#q5Ans2").innerHTML = "Muay Thai";
                 document.querySelector("#q5Ans3").innerHTML = "Run Fast";
                 document.querySelector("#q5Ans4").innerHTML = "Jiu Jitsu";
-                
+
                 //this will make question 5s answer/buttons availible
                 var question5Answers = document.querySelector("#question5Answers").style.visibility = "visible";
             }
@@ -656,8 +722,8 @@
 
 
         }
-       
-        function answer2Q4(){
+
+        function answer2Q4() {
             //this will erase the question and answers
             document.querySelector("#fourthQ").style.visibility = "hidden";
 
@@ -683,14 +749,14 @@
                 document.querySelector("#q5Ans2").innerHTML = "Muay Thai";
                 document.querySelector("#q5Ans3").innerHTML = "Run Fast";
                 document.querySelector("#q5Ans4").innerHTML = "Jiu Jitsu";
-                
+
                 //this will make question 5s answer/buttons availible
                 var question5Answers = document.querySelector("#question5Answers").style.visibility = "visible";
             }
 
-            
+
         }
-        function answer3Q4(){
+        function answer3Q4() {
             //this will erase the question and answers
             document.querySelector("#fourthQ").style.visibility = "hidden";
 
@@ -716,14 +782,14 @@
                 document.querySelector("#q5Ans2").innerHTML = "Muay Thai";
                 document.querySelector("#q5Ans3").innerHTML = "Run Fast";
                 document.querySelector("#q5Ans4").innerHTML = "Jiu Jitsu";
-                
+
                 //this will make question 5s answer/buttons availible
                 var question5Answers = document.querySelector("#question5Answers").style.visibility = "visible";
             }
 
-            
+
         }
-        function answer4Q4(){
+        function answer4Q4() {
             //this will erase the question and answers
             document.querySelector("#fourthQ").style.visibility = "hidden";
 
@@ -749,14 +815,14 @@
                 document.querySelector("#q5Ans2").innerHTML = "Muay Thai";
                 document.querySelector("#q5Ans3").innerHTML = "Run Fast";
                 document.querySelector("#q5Ans4").innerHTML = "Jiu Jitsu";
-                
+
                 //this will make question 5s answer/buttons availible
                 var question5Answers = document.querySelector("#question5Answers").style.visibility = "visible";
             }
 
-            
+
         }
-        function answer1Q5(){
+        function answer1Q5() {
             //this will erase the question and answers
             document.querySelector("#fifthQ").style.visibility = "hidden";
 
@@ -768,6 +834,9 @@
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
                 secondsLeft -= 10;
                 console.log(secondsLeft);
+                document.querySelector("#score").innerHTML = "Your score was:" + score;
+
+                document.querySelector("#countdown").innerHTML = "Game Over";
 
 
 
@@ -775,7 +844,7 @@
 
 
         }
-        function answer2Q5(){
+        function answer2Q5() {
             //this will erase the question and answers
             document.querySelector("#fifthQ").style.visibility = "hidden";
 
@@ -787,6 +856,9 @@
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
                 secondsLeft -= 10;
                 console.log(secondsLeft);
+                document.querySelector("#score").innerHTML = "Your score was:" + score;
+
+                document.querySelector("#countdown").innerHTML = "Game Over";
 
 
 
@@ -794,7 +866,7 @@
 
 
         }
-        function answer3Q5(){
+        function answer3Q5() {
             //this will erase the question and answers
             document.querySelector("#fifthQ").style.visibility = "hidden";
 
@@ -806,6 +878,9 @@
             if (document.querySelector("#rightOrWrong").innerHTML === "Wrong") {
                 secondsLeft -= 10;
                 console.log(secondsLeft);
+                document.querySelector("#score").innerHTML = "Your score was:" + score;
+
+                document.querySelector("#countdown").innerHTML = "Game Over";
 
 
 
@@ -813,11 +888,13 @@
 
 
         }
-        function answer4Q5(){
+        function answer4Q5() {
             //this will erase the question and answers
             document.querySelector("#fifthQ").style.visibility = "hidden";
 
             document.querySelector("#question5Answers").style.visibility = "hidden";
+
+
 
 
             document.querySelector("#rightOrWrong").innerHTML = "Right!";
@@ -825,6 +902,12 @@
             if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
                 score++;
                 console.log(score);
+
+                document.querySelector("#score").innerHTML = "Your score was:" + score;
+
+
+
+
 
 
 
