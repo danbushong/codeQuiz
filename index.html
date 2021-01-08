@@ -38,7 +38,7 @@
         <br>
         <input type="submit" value="Submit">
     </form>
-    <ol id="initialsList">Highscores</ol>
+    <ul id="initialsList">Highscores</ul>
 
 
 
@@ -258,6 +258,7 @@
                     document.querySelector("#question3").style.visibility = "hidden";
                     document.querySelector("#question4").style.visibility = "hidden";
                     document.querySelector("#question5").style.visibility = "hidden";
+                    document.querySelector("#score").innerHTML = "Your score was:" + score;
 
                     
 
@@ -875,7 +876,7 @@
                 console.log(secondsLeft);
                 document.querySelector("#score").innerHTML = "Your score was:" + score;
 
-                document.querySelector("#countdown").innerHTML = "Game Over";
+                
                 var formOfinitials = document.querySelector("#submitInitials").style.visibility = "visible";
 
 
@@ -899,7 +900,7 @@
                 console.log(secondsLeft);
                 document.querySelector("#score").innerHTML = "Your score was:" + score;
 
-                document.querySelector("#countdown").innerHTML = "Game Over";
+                
                 var formOfinitials = document.querySelector("#submitInitials").style.visibility = "visible";
 
 
@@ -922,7 +923,7 @@
                 console.log(secondsLeft);
                 document.querySelector("#score").innerHTML = "Your score was:" + score;
 
-                document.querySelector("#countdown").innerHTML = "Game Over";
+                
                 var formOfinitials = document.querySelector("#submitInitials").style.visibility = "visible";
 
 
@@ -945,6 +946,7 @@
             if (document.querySelector("#rightOrWrong").innerHTML === "Right!") {
                 score++;
                 console.log(score);
+                document.querySelector("#score").innerHTML = "Your score was:" + score;
 
                 var formOfinitials = document.querySelector("#submitInitials").style.visibility = "visible";
 
